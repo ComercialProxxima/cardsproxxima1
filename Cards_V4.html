@@ -7,59 +7,59 @@
     <title>Card's Proxxima</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* ------------------ Estilização dos filtros ------------------ */
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 15px;
+            margin-bottom: 30px;
 
-                    /* ------------------ Estilização dos filtros ------------------ */
-                    .filters {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                justify-content: center;
-                padding: 15px;
-                margin-bottom: 30px;
+            background: #fff;
+            /* Fundo branco */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
 
-                background: #fff;
-                /* Fundo branco */
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        .filters label {
+            font-weight: 500;
+            margin-right: 6px;
+        }
+
+        .filters select {
+            /* Remove a aparência padrão do select em alguns browsers */
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 8px 40px 8px 12px;
+            /* espaço extra à direita para acomodar o ícone */
+            background: #f8f8f8;
+            font-size: 0.95rem;
+            cursor: pointer;
+
+            /* Ícone de setinha embutido (opcional) */
+            background: #f8f8f8 url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cG9seWdvbiBwb2ludHM9IjAsMCAxMiwwIDYsOCIgc3R5bGU9ImZpbGw6IzY2NjsiLz48L3N2Zz4=') no-repeat 96% center/16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .filters select:focus {
+            border-color: #E6007D;
+            /* cor de foco */
+            outline: none;
+        }
+
+        /* Responsividade dos filtros */
+        @media (max-width: 600px) {
+            .filters {
+                flex-direction: column;
+                align-items: flex-start;
             }
+        }
 
-            .filters label {
-                font-weight: 500;
-                margin-right: 6px;
-            }
-
-            .filters select {
-                /* Remove a aparência padrão do select em alguns browsers */
-                appearance: none;
-                -webkit-appearance: none;
-                -moz-appearance: none;
-
-                border: 1px solid #ccc;
-                border-radius: 6px;
-                padding: 8px 40px 8px 12px;
-                /* espaço extra à direita para acomodar o ícone */
-                background: #f8f8f8;
-                font-size: 0.95rem;
-                cursor: pointer;
-
-                /* Ícone de setinha embutido (opcional) */
-                background: #f8f8f8 url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cG9seWdvbiBwb2ludHM9IjAsMCAxMiwwIDYsOCIgc3R5bGU9ImZpbGw6IzY2NjsiLz48L3N2Zz4=') no-repeat 96% center/16px;
-                transition: border-color 0.3s ease;
-            }
-
-            .filters select:focus {
-                border-color: #E6007D;
-                /* cor de foco */
-                outline: none;
-            }
-
-            /* Responsividade dos filtros */
-            @media (max-width: 600px) {
-                .filters {
-                    flex-direction: column;
-                    align-items: flex-start;
-                }
-            }
         * {
             margin: 0;
             padding: 0;
@@ -255,8 +255,6 @@
             font-size: 0.85rem;
             text-decoration: none;
             margin-top: 10px;
-
-
     </style>
 </head>
 
@@ -269,15 +267,236 @@
         <select id="cidade">
             <option value="todos">Todos</option>
             <option value="Monteiro - PB">Monteiro - PB</option>
+            <option value="Sumé - PB">Sumé - PB</option>
             <option value="Serra Branca - PB">Serra Branca - PB</option>
+            <option value="Congo - PB">Congo - PB</option>
+            <option value="Assunção - PB">Assunção - PB</option>
+            <option value="Seridó - PB">Seridó - PB</option>
+            <option value="Taperoá - PB">Taperoá - PB</option>
+            <option value="Pedra Lavrada - PB">Pedra Lavrada - PB</option>
+            <option value="Olivedos - PB">Olivedos - PB</option>
+            <option value="Soledade - PB">Soledade - PB</option>
+            <option value="Juazeirinho - PB">Juazeirinho - PB</option>
+            <option value="Gurjão - PB">Gurjão - PB</option>
+            <option value="Boa Vista - PB">Boa Vista - PB</option>
+            <option value="Sertânia - PE">Sertânia - PE</option>
+            <option value="São José do Egito - PE">São José do Egito - PE</option>
+            <option value="Afogados da Ingazeira - PE">Afogados da Ingazeira - PE</option>
+            <option value="Guarabira - PB">Guarabira - PB</option>
+            <option value="Queimadas - PB">Queimadas - PB</option>
+            <option value="Jaçanã - RN">Jaçanã - RN</option>
+            <option value="Jucurutu - RN">Jucurutu - RN</option>
+            <option value="Joca Claudino - PB">Joca Claudino - PB</option>
+            <option value="Bernardino Batista - PB">Bernardino Batista - PB</option>
+            <option value="Jardim de Piranhas - RN">Jardim de Piranhas - RN</option>
+            <option value="São Paulo do Potengi - RN">São Paulo do Potengi - RN</option>
+            <option value="Santa Maria - RN">Santa Maria - RN</option>
+            <option value="João Câmara - RN">João Câmara - RN</option>
+            <option value="Pedra Grande - RN">Pedra Grande - RN</option>
+            <option value="Tibau - RN">Tibau - RN</option>
+            <option value="Zabelê - PB">Zabelê - PB</option>
+            <option value="Cajazeiras - PB">Cajazeiras - PB</option>
+            <option value="Santa Luzia - PB">Santa Luzia - PB</option>
+            <option value="Cabedelo - PB">Cabedelo - PB</option>
+            <option value="Extremoz - RN">Extremoz - RN</option>
+            <option value="Natal - RN">Natal - RN</option>
+            <option value="São Gonçalo do Amarante - RN">São Gonçalo do Amarante - RN</option>
+            <option value="João Pessoa - PB">João Pessoa - PB</option>
+            <option value="Campina Grande - PB">Campina Grande - PB</option>
+            <option value="Baraúna - PB">Baraúna - PB</option>
+            <option value="Belo Jardim - PE">Belo Jardim - PE</option>
+            <option value="Caicó - RN">Caicó - RN</option>
+            <option value="Ceará-Mirim - RN">Ceará-Mirim - RN</option>
+            <option value="Garanhuns - PE">Garanhuns - PE</option>
+            <option value="Nísia Floresta - RN">Nísia Floresta - RN</option>
+            <option value="Pombal - PB">Pombal - PB</option>
+            <option value="São José de Mipibu - RN">São José de Mipibu - RN</option>
+            <option value="Sousa - PB">Sousa - PB</option>
+            <option value="Uiraúna - PB">Uiraúna - PB</option>
+            <option value="São Bento - PB">São Bento - PB</option>
+            <option value="Lajedo - PE">Lajedo - PE</option>
+            <option value="São João - PE">São João - PE</option>
+            <option value="Lastro - PB">Lastro - PB</option>
+            <option value="São Bentinho - PB">São Bentinho - PB</option>
+            <option value="São Bento do Una - PE">São Bento do Una - PE</option>
+            <option value="Cruzeta - RN">Cruzeta - RN</option>
+            <option value="Santa Cruz - RN">Santa Cruz - RN</option>
+            <option value="Cuité - PB">Cuité - PB</option>
+            <option value="Jurema - PE">Jurema - PE</option>
+            <option value="Canhotinho - PE">Canhotinho - PE</option>
+            <option value="Jucati - PE">Jucati - PE</option>
+            <option value="Calçado - PE">Calçado - PE</option>
+            <option value="Cachoeirinha - PE">Cachoeirinha - PE</option>
+            <option value="Condado - PB">Condado - PB</option>
+            <option value="Umari - CE">Umari - CE</option>
+            <option value="Jacobina - BA">Jacobina - BA</option>
+            <option value="Lagoa Seca - PB">Lagoa Seca - PB</option>
+            <option value="Massaranduba - PB">Massaranduba - PB</option>
+            <option value="Serra Redonda - PB">Serra Redonda - PB</option>
+            <option value="Itatuba - PB">Itatuba - PB</option>
+            <option value="Areial - PB">Areial - PB</option>
+            <option value="São Sebastião de Lagoa de Roça - PB">São Sebastião de Lagoa de Roça - PB</option>
+            <option value="Alagoa Nova - PB">Alagoa Nova - PB</option>
+            <option value="Montadas - PB">Montadas - PB</option>
+            <option value="Belém do Brejo do Cruz - PB">Belém do Brejo do Cruz - PB</option>
+            <option value="Acari - RN">Acari - RN</option>
+            <option value="Alto do Rodrigues - RN">Alto do Rodrigues - RN</option>
+            <option value="Guamaré - RN">Guamaré - RN</option>
+            <option value="Lajes Pintadas - RN">Lajes Pintadas - RN</option>
+            <option value="Macau - RN">Macau - RN</option>
+            <option value="Riachuelo - RN">Riachuelo - RN</option>
+            <option value="São Rafael - RN">São Rafael - RN</option>
+            <option value="Pendências - RN">Pendências - RN</option>
+            <option value="Caém - BA">Caém - BA</option>
+            <option value="Caldeirão Grande - BA">Caldeirão Grande - BA</option>
+            <option value="Saúde - BA">Saúde - BA</option>
+            <option value="Quixabeira - BA">Quixabeira - BA</option>
+            <option value="Pindobaçu - BA">Pindobaçu - BA</option>
+            <option value="Capim Grosso - BA">Capim Grosso - BA</option>
+            <option value="Esperança - PB">Esperança - PB</option>
+            <option value="Remígio - PB">Remígio - PB</option>
+            <option value="Areia - PB">Areia - PB</option>
+            <option value="Alagoinha - PB">Alagoinha - PB</option>
+            <option value="Lagoa de Dentro - PB">Lagoa de Dentro - PB</option>
+            <option value="Riachão do Bacamarte - PB">Riachão do Bacamarte - PB</option>
+            <option value="Solânea - PB">Solânea - PB</option>
+            <option value="São Fernando - RN">São Fernando - RN</option>
+            <option value="São José do Seridó - RN">São José do Seridó - RN</option>
+            <option value="Junco do Seridó - PB">Junco do Seridó - PB</option>
+            <option value="São José do Sabugi - PB">São José do Sabugi - PB</option>
+            <option value="Várzea - PB">Várzea - PB</option>
+            <option value="Ouro Branco - RN">Ouro Branco - RN</option>
+            <option value="Cubati - PB">Cubati - PB</option>
+            <option value="Pocinhos - PB">Pocinhos - PB</option>
+            <option value="Ipueira - RN">Ipueira - RN</option>
+            <option value="Macaíba - RN">Macaíba - RN</option>
+            <option value="Goianinha - RN">Goianinha - RN</option>
+            <option value="Canguaretama - RN">Canguaretama - RN</option>
+            <option value="Tibau do Sul - RN">Tibau do Sul - RN</option>
+            <option value="Rio do Fogo - RN">Rio do Fogo - RN</option>
+            <option value="Touros - RN">Touros - RN</option>
+            <option value="Nova Cruz - RN">Nova Cruz - RN</option>
+            <option value="Euclides da Cunha - BA">Euclides da Cunha - BA</option>
+            <option value="Poço Branco - RN">Poço Branco - RN</option>
+            <option value="Conde - PB">Conde - PB</option>
+            <option value="Ponto Novo - BA">Ponto Novo - BA</option>
+            <option value="Puxinanã - PB">Puxinanã - PB</option>
+            <option value="Filadélfia - BA">Filadélfia - BA</option>
+            <option value="Andorinha - BA">Andorinha - BA</option>
+            <option value="Coronel Ezequiel - RN">Coronel Ezequiel - RN</option>
+            <option value="Itiúba - BA">Itiúba - BA</option>
+            <option value="Nova Palmeira - PB">Nova Palmeira - PB</option>
+            <option value="Picuí - PB">Picuí - PB</option>
+            <option value="Frei Martinho - PB">Frei Martinho - PB</option>
+            <option value="Sossêgo - PB">Sossêgo - PB</option>
+            <option value="Parelhas - RN">Parelhas - RN</option>
+            <option value="Carnaúba dos Dantas - RN">Carnaúba dos Dantas - RN</option>
+            <option value="Arês - RN">Arês - RN</option>
+            <option value="Tangará - RN">Tangará - RN</option>
+            <option value="Pirpirituba - PB">Pirpirituba - PB</option>
+            <option value="Bom Jesus - RN">Bom Jesus - RN</option>
+            <option value="Barra de Santa Rosa - PB">Barra de Santa Rosa - PB</option>
+
             <!-- ... Demais opções ... -->
         </select>
 
         <label for="empresa">Empresa:</label>
         <select id="empresa">
             <option value="todos">Todos</option>
+            <option value="AD Telecom">AD Telecom</option>
+            <option value="aemak NET">aemak NET</option>
+            <option value="Agility Telecom">Agility Telecom</option>
+            <option value="Agreste Link">Agreste Link</option>
+            <option value="alares">alares</option>
+            <option value="allconnect">allconnect</option>
+            <option value="ALMEIDA Telecom">ALMEIDA Telecom</option>
+            <option value="ANX Telecom">ANX Telecom</option>
+            <option value="arenatelecom">arenatelecom</option>
+            <option value="Atel Telecom">Atel Telecom</option>
+            <option value="Atualnet">Atualnet</option>
+            <option value="Bakanas">Bakanas</option>
+            <option value="Bluenet">Bluenet</option>
+            <option value="Brisanet">Brisanet</option>
+            <option value="BRLink">BRLink</option>
             <option value="Cariri Web">Cariri Web</option>
+            <option value="CIANET">CIANET</option>
+            <option value="Claro">Claro</option>
+            <option value="digital">digital</option>
+            <option value="DJNet">DJNet</option>
+            <option value="DRNet">DRNet</option>
+            <option value="DTEL+">DTEL+</option>
+            <option value="Facilnet">Facilnet</option>
+            <option value="Falcão NET">Falcão NET</option>
+            <option value="Gnet">Gnet</option>
+            <option value="grupo IBT">grupo IBT</option>
+            <option value="Gtnet">Gtnet</option>
+            <option value="GW Telecom">GW Telecom</option>
+            <option value="Hnet">Hnet</option>
+            <option value="HYPERLINK">HYPERLINK</option>
+            <option value="I7 Telecom">I7 Telecom</option>
+            <option value="INC Telecom">INC Telecom</option>
+            <option value="InfoWay">InfoWay</option>
+            <option value="Intelnet">Intelnet</option>
+            <option value="Interface Internet">Interface Internet</option>
+            <option value="L&M Telecom">L&M Telecom</option>
+            <option value="lgnet">lgnet</option>
+            <option value="LinkFibra">LinkFibra</option>
+            <option value="LOCAL NET">LOCAL NET</option>
+            <option value="MEGAENTER Internet">MEGAENTER Internet</option>
+            <option value="MegaLink">MegaLink</option>
+            <option value="MEGALINK Telecom">MEGALINK Telecom</option>
+            <option value="Mix Fibra">Mix Fibra</option>
+            <option value="MORAIS Net">MORAIS Net</option>
+            <option value="MTec">MTec</option>
+            <option value="Multi Soluções">Multi Soluções</option>
+            <option value="MUNDIAL STATION">MUNDIAL STATION</option>
+            <option value="MyLink Internet">MyLink Internet</option>
+            <option value="Neolinepb">Neolinepb</option>
+            <option value="NET4YOU">NET4YOU</option>
+            <option value="Netcell">Netcell</option>
+            <option value="Netjet">Netjet</option>
+            <option value="Netline">Netline</option>
             <option value="NetMais">NetMais</option>
+            <option value="NetMania">NetMania</option>
+            <option value="newline Telecom">newline Telecom</option>
+            <option value="Objetivo Informatica">Objetivo Informatica</option>
+            <option value="Oi">Oi</option>
+            <option value="PBNet">PBNet</option>
+            <option value="PJMNET">PJMNET</option>
+            <option value="POINTNET Telecom">POINTNET Telecom</option>
+            <option value="ProLink Internet">ProLink Internet</option>
+            <option value="Provedor Click">Provedor Click</option>
+            <option value="RapNet Telecom">RapNet Telecom</option>
+            <option value="Rcsnet">Rcsnet</option>
+            <option value="RMNET Telecom">RMNET Telecom</option>
+            <option value="Sc Net">Sc Net</option>
+            <option value="SEND Telecom">SEND Telecom</option>
+            <option value="SERVTEC Fibra">SERVTEC Fibra</option>
+            <option value="SPEED Service Internet">SPEED Service Internet</option>
+            <option value="SPEEDING Telecom">SPEEDING Telecom</option>
+            <option value="SS Informatica">SS Informatica</option>
+            <option value="SYNCNET">SYNCNET</option>
+            <option value="Technical Internet">Technical Internet</option>
+            <option value="telecab">telecab</option>
+            <option value="TELEINFOR PROVEDOR">TELEINFOR PROVEDOR</option>
+            <option value="telnet FAST">telnet FAST</option>
+            <option value="TEN Internet">TEN Internet</option>
+            <option value="Top Web Telecom">Top Web Telecom</option>
+            <option value="Totalweb">Totalweb</option>
+            <option value="TREND Connect+">TREND Connect+</option>
+            <option value="TRXNet">TRXNet</option>
+            <option value="turbolink">turbolink</option>
+            <option value="UltraCabo">UltraCabo</option>
+            <option value="UNIDASNET">UNIDASNET</option>
+            <option value="Unny Telecom">Unny Telecom</option>
+            <option value="Uplink">Uplink</option>
+            <option value="VELOZNET Telecom">VELOZNET Telecom</option>
+            <option value="ViaFibra">ViaFibra</option>
+            <option value="Vivo Fibra">Vivo Fibra</option>
+            <option value="WRlink Telecom">WRlink Telecom</option>
+            <option value="Zon Telecom">Zon Telecom</option>
+
+
             <!-- ... Demais opções ... -->
         </select>
 
@@ -286,14 +505,28 @@
             <option value="todos">Todos</option>
             <option value="Regional 01">Regional 01</option>
             <option value="Regional 02">Regional 02</option>
+            <option value="Regional 03">Regional 03</option>
+            <option value="Regional 04">Regional 04</option>
+            <option value="Regional 05">Regional 05</option>
             <!-- ... Demais opções ... -->
         </select>
 
         <label for="unidade">Unidade:</label>
         <select id="unidade">
             <option value="todos">Todos</option>
+            <option value="Regional Lajedo">Regional Lajedo</option>
             <option value="Regional Monteiro">Regional Monteiro</option>
+            <option value="Regional Sj do Rio do Peixe">Regional Sj do Rio do Peixe</option>
             <option value="Regional Campina Grande">Regional Campina Grande</option>
+            <option value="Regional Guarabira">Regional Guarabira</option>
+            <option value="Regional Santa Luzia">Regional Santa Luzia</option>
+            <option value="Regional Natal">Regional Natal</option>
+            <option value="Regional Caico">Regional Caicó</option>
+            <option value="Regional Picui">Regional Picuí</option>
+            <option value="Regional Jacobina">Regional Jacobina</option>
+            <option value="Regional Capim Grosso">Regional Capim Grosso</option>
+            <option value="Regional Macau">Regional Macau </option>
+            <option value="Regional Touros">Regional Touros </option>
             <!-- ... Demais opções ... -->
         </select>
     </div>
@@ -2484,7 +2717,7 @@
         <div class="card" data-cidade="Lajedo - PE" data-empresa="DTEL+" data-regional="Regional 01"
             data-unidade="Regional Lajedo">
             <div class="tooltip"><a href="https://dtel.com.br/" target="_blank"><img
-                        src="https://dtel.com.br/upload/config/2024/04/og-image.jpg" alt="Logo DTEL+"></a>
+                        src="https://dtel.com.br/src/assets/logo/dtel_telecom.svg" alt="Logo DTEL+"></a>
                 <div class="tooltiptext">DTEL+</div>
             </div>
             <div class="card-header">
@@ -2616,9 +2849,11 @@
         <div class="card" data-cidade="São Bento do Una - PE" data-empresa="DTEL+" data-regional="Regional 01"
             data-unidade="Regional Lajedo">
             <div class="tooltip"><a href="https://dtel.com.br/" target="_blank"><img
-                        src="https://dtel.com.br/upload/config/2024/04/og-image.jpg" alt="Logo DTEL+"></a>
+                        src="https://dtel.com.br/src/assets/logo/dtel_telecom.svg" alt="Logo DTEL+"></a>
                 <div class="tooltiptext">DTEL+</div>
             </div>
+            
+
             <div class="card-header">
                 <div class="header-titles"><span>Plano</span><span>Velocidade</span><span>Valor</span></div>
                 <div class="header-info">
@@ -4365,7 +4600,8 @@
         <div class="card" data-cidade="Caém - BA" data-empresa="TEN Internet" data-regional="Regional 04"
             data-unidade="Regional Jacobina">
             <div class="tooltip"><a href="https://teninternet.com.br/" target="_blank"><img
-                        src="https://teninternet.com.br/" alt="Logo TEN Internet"></a>
+                        src="https://teninternet.com.br/wp-content/uploads/ten-internet-logo_vetor.svg"
+                        alt="Logo TEN Internet"></a>
                 <div class="tooltiptext">TEN Internet</div>
             </div>
             <div class="card-header">
@@ -4391,7 +4627,8 @@
         <div class="card" data-cidade="Caldeirão Grande - BA" data-empresa="TEN Internet" data-regional="Regional 04"
             data-unidade="Regional Jacobina">
             <div class="tooltip"><a href="https://teninternet.com.br/" target="_blank"><img
-                        src="https://teninternet.com.br/" alt="Logo TEN Internet"></a>
+                        src="https://teninternet.com.br/wp-content/uploads/ten-internet-logo_vetor.svg"
+                        alt="Logo TEN Internet"></a>
                 <div class="tooltiptext">TEN Internet</div>
             </div>
             <div class="card-header">
@@ -4417,7 +4654,8 @@
         <div class="card" data-cidade="Saúde - BA" data-empresa="TEN Internet" data-regional="Regional 04"
             data-unidade="Regional Jacobina">
             <div class="tooltip"><a href="https://teninternet.com.br/" target="_blank"><img
-                        src="https://teninternet.com.br/" alt="Logo TEN Internet"></a>
+                        src="https://teninternet.com.br/wp-content/uploads/ten-internet-logo_vetor.svg"
+                        alt="Logo TEN Internet"></a>
                 <div class="tooltiptext">TEN Internet</div>
             </div>
             <div class="card-header">
@@ -4443,7 +4681,8 @@
         <div class="card" data-cidade="Quixabeira - BA" data-empresa="TEN Internet" data-regional="Regional 04"
             data-unidade="Regional Capim Grosso">
             <div class="tooltip"><a href="https://teninternet.com.br/" target="_blank"><img
-                        src="https://teninternet.com.br/" alt="Logo TEN Internet"></a>
+                        src="https://teninternet.com.br/wp-content/uploads/ten-internet-logo_vetor.svg"
+                        alt="Logo TEN Internet"></a>
                 <div class="tooltiptext">TEN Internet</div>
             </div>
             <div class="card-header">
@@ -4469,7 +4708,8 @@
         <div class="card" data-cidade="Pindobaçu - BA" data-empresa="TEN Internet" data-regional="Regional 04"
             data-unidade="Regional Jacobina">
             <div class="tooltip"><a href="https://teninternet.com.br/" target="_blank"><img
-                        src="https://teninternet.com.br/" alt="Logo TEN Internet"></a>
+                        src="https://teninternet.com.br/wp-content/uploads/ten-internet-logo_vetor.svg"
+                        alt="Logo TEN Internet"></a>
                 <div class="tooltiptext">TEN Internet</div>
             </div>
             <div class="card-header">
@@ -4495,7 +4735,8 @@
         <div class="card" data-cidade="Jacobina - BA" data-empresa="TEN Internet" data-regional="Regional 04"
             data-unidade="Regional Jacobina">
             <div class="tooltip"><a href="https://teninternet.com.br/" target="_blank"><img
-                        src="https://teninternet.com.br/" alt="Logo TEN Internet"></a>
+                        src="https://teninternet.com.br/wp-content/uploads/ten-internet-logo_vetor.svg"
+                        alt="Logo TEN Internet"></a>
                 <div class="tooltiptext">TEN Internet</div>
             </div>
             <div class="card-header">
@@ -4521,7 +4762,8 @@
         <div class="card" data-cidade="Capim Grosso - BA" data-empresa="TEN Internet" data-regional="Regional 04"
             data-unidade="Regional Capim Grosso">
             <div class="tooltip"><a href="https://teninternet.com.br/" target="_blank"><img
-                        src="https://teninternet.com.br/" alt="Logo TEN Internet"></a>
+                        src="https://teninternet.com.br/wp-content/uploads/ten-internet-logo_vetor.svg"
+                        alt="Logo TEN Internet"></a>
                 <div class="tooltiptext">TEN Internet</div>
             </div>
             <div class="card-header">
@@ -5625,8 +5867,9 @@
         <div class="card" data-cidade="Natal - RN" data-empresa="alares" data-regional="Regional 03"
             data-unidade="Regional Natal">
             <div class="tooltip"><a href="https://www.alaresinternet.com.br/" target="_blank"><img
-                        src="https://www.alaresinternet.com.br/" alt="Logo alares"></a>
+                        src="https://www.alaresinternet.com.br/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.05877cc4.png&w=256&q=75" alt="Logo alares"></a>
                 <div class="tooltiptext">alares</div>
+                
             </div>
             <div class="card-header">
                 <div class="header-titles"><span>Plano</span><span>Velocidade</span><span>Valor</span></div>
@@ -5651,7 +5894,7 @@
         <div class="card" data-cidade="Canguaretama - RN" data-empresa="alares" data-regional="Regional 03"
             data-unidade="Regional Natal">
             <div class="tooltip"><a href="https://www.alaresinternet.com.br/" target="_blank"><img
-                        src="https://www.alaresinternet.com.br/" alt="Logo alares"></a>
+                        src="https://www.alaresinternet.com.br/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.05877cc4.png&w=256&q=75" alt="Logo alares"></a>
                 <div class="tooltiptext">alares</div>
             </div>
             <div class="card-header">
@@ -5677,7 +5920,7 @@
         <div class="card" data-cidade="Goianinha - RN" data-empresa="alares" data-regional="Regional 03"
             data-unidade="Regional Natal">
             <div class="tooltip"><a href="https://www.alaresinternet.com.br/" target="_blank"><img
-                        src="https://www.alaresinternet.com.br/" alt="Logo alares"></a>
+                        src="https://www.alaresinternet.com.br/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.05877cc4.png&w=256&q=75" alt="Logo alares"></a>
                 <div class="tooltiptext">alares</div>
             </div>
             <div class="card-header">
@@ -5703,7 +5946,7 @@
         <div class="card" data-cidade="Nísia Floresta - RN" data-empresa="alares" data-regional="Regional 03"
             data-unidade="Regional Natal">
             <div class="tooltip"><a href="https://www.alaresinternet.com.br/" target="_blank"><img
-                        src="https://www.alaresinternet.com.br/" alt="Logo alares"></a>
+                        src="https://www.alaresinternet.com.br/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.05877cc4.png&w=256&q=75" alt="Logo alares"></a>
                 <div class="tooltiptext">alares</div>
             </div>
             <div class="card-header">
@@ -5729,7 +5972,7 @@
         <div class="card" data-cidade="Nova Cruz - RN" data-empresa="alares" data-regional="Regional 03"
             data-unidade="Regional Natal">
             <div class="tooltip"><a href="https://www.alaresinternet.com.br/" target="_blank"><img
-                        src="https://www.alaresinternet.com.br/" alt="Logo alares"></a>
+                        src="https://www.alaresinternet.com.br/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.05877cc4.png&w=256&q=75" alt="Logo alares"></a>
                 <div class="tooltiptext">alares</div>
             </div>
             <div class="card-header">
@@ -5755,7 +5998,7 @@
         <div class="card" data-cidade="São Gonçalo do Amarante - RN" data-empresa="alares" data-regional="Regional 03"
             data-unidade="Regional Natal">
             <div class="tooltip"><a href="https://www.alaresinternet.com.br/" target="_blank"><img
-                        src="https://www.alaresinternet.com.br/" alt="Logo alares"></a>
+                        src="https://www.alaresinternet.com.br/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.05877cc4.png&w=256&q=75" alt="Logo alares"></a>
                 <div class="tooltiptext">alares</div>
             </div>
             <div class="card-header">
@@ -5781,7 +6024,7 @@
         <div class="card" data-cidade="São José de Mipibu - RN" data-empresa="alares" data-regional="Regional 03"
             data-unidade="Regional Natal">
             <div class="tooltip"><a href="https://www.alaresinternet.com.br/" target="_blank"><img
-                        src="https://www.alaresinternet.com.br/" alt="Logo alares"></a>
+                        src="https://www.alaresinternet.com.br/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.05877cc4.png&w=256&q=75" alt="Logo alares"></a>
                 <div class="tooltiptext">alares</div>
             </div>
             <div class="card-header">
@@ -5807,7 +6050,7 @@
         <div class="card" data-cidade="Tibau do Sul - RN" data-empresa="alares" data-regional="Regional 03"
             data-unidade="Regional Natal">
             <div class="tooltip"><a href="https://www.alaresinternet.com.br/" target="_blank"><img
-                        src="https://www.alaresinternet.com.br/" alt="Logo alares"></a>
+                        src="https://www.alaresinternet.com.br/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.05877cc4.png&w=256&q=75" alt="Logo alares"></a>
                 <div class="tooltiptext">alares</div>
             </div>
             <div class="card-header">
@@ -5833,7 +6076,7 @@
         <div class="card" data-cidade="João Pessoa - PB" data-empresa="alares" data-regional="Regional 02"
             data-unidade="Regional Guarabira">
             <div class="tooltip"><a href="https://www.alaresinternet.com.br/" target="_blank"><img
-                        src="https://www.alaresinternet.com.br/" alt="Logo alares"></a>
+                        src="https://www.alaresinternet.com.br/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.05877cc4.png&w=256&q=75" alt="Logo alares"></a>
                 <div class="tooltiptext">alares</div>
             </div>
             <div class="card-header">
@@ -5940,9 +6183,10 @@
         <div class="card" data-cidade="Conde - PB" data-empresa="Provedor Click" data-regional="Regional 02"
             data-unidade="Regional Guarabira">
             <div class="tooltip"><a href="https://provedorclick.com.br/" target="_blank"><img
-                        src="https://provedorclick.com.br/wp-content/uploads/20…/10/logo3d_click_com_baixa_resolucao-2048x748.png"
+                        src="https://provedorclick.com.br/wp-content/uploads/2023/10/logo3d_click_com_baixa_resolucao-1024x374.png"
                         alt="Logo Provedor Click"></a>
                 <div class="tooltiptext">Provedor Click</div>
+                
             </div>
             <div class="card-header">
                 <div class="header-titles"><span>Plano</span><span>Velocidade</span><span>Valor</span></div>
@@ -5967,9 +6211,10 @@
         <div class="card" data-cidade="Ponto Novo - BA" data-empresa="DJNet" data-regional="Regional 04"
             data-unidade="Regional Capim Grosso">
             <div class="tooltip"><a href="https://www.djnet.net.br/" target="_blank"><img
-                        src="https://static.wixstatic.com/media/f35753_f74e59d7…if,quality_auto/LOGO%20MELHORADA%20-%20BRANCO.png"
+                        src="https://static.wixstatic.com/media/f35753_f74e59d7792a4dd09a056dfdad50d84c~mv2.png/v1/fill/w_234,h_159,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO%20MELHORADA%20-%20BRANCO.png"
                         alt="Logo DJNet"></a>
                 <div class="tooltiptext">DJNet</div>
+                
             </div>
             <div class="card-header">
                 <div class="header-titles"><span>Plano</span><span>Velocidade</span><span>Valor</span></div>
@@ -5994,7 +6239,7 @@
         <div class="card" data-cidade="Saúde - BA" data-empresa="DJNet" data-regional="Regional 04"
             data-unidade="Regional Jacobina">
             <div class="tooltip"><a href="https://www.djnet.net.br/" target="_blank"><img
-                        src="https://static.wixstatic.com/media/f35753_f74e59d7…if,quality_auto/LOGO%20MELHORADA%20-%20BRANCO.png"
+                        src="https://static.wixstatic.com/media/f35753_f74e59d7792a4dd09a056dfdad50d84c~mv2.png/v1/fill/w_234,h_159,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO%20MELHORADA%20-%20BRANCO.png"
                         alt="Logo DJNet"></a>
                 <div class="tooltiptext">DJNet</div>
             </div>
@@ -6205,7 +6450,7 @@
         <div class="card" data-cidade="Coronel Ezequiel - RN" data-empresa="Gtnet" data-regional="Regional 03"
             data-unidade="Regional Picui">
             <div class="tooltip"><a href="https://www.instagram.com/sougtnet/" target="_blank"><img
-                        src="https://instagram.fcpv1-1.fna.fbcdn.net/v/t51.2885…FVQDcZVx7hrPg4h9mreAhw&oe=67611FC8&_nc_sid=bc0c2c"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3kv0laX5ztuL6BZOkAR5Qa1yLKH0tuaNR2g&s"
                         alt="Logo Gtnet"></a>
                 <div class="tooltiptext">Gtnet</div>
             </div>
@@ -6284,7 +6529,7 @@
         <div class="card" data-cidade="Nova Palmeira - PB" data-empresa="InfoWay" data-regional="Regional 03"
             data-unidade="Regional Picui">
             <div class="tooltip"><a href="https://www.instagram.com/infowaytelecom/" target="_blank"><img
-                        src="https://instagram.fcpv1-1.fna.fbcdn.net/v/t51.2885…Eg55VM1DorNwvShPZ632FQ&oe=67610909&_nc_sid=8b3546"
+                        src="https://ugc.production.linktr.ee/D2kEfvBmQFSF5qagbrnf_6LpQmnNEkW7HJI30?io=true&size=avatar-v3_0"
                         alt="Logo InfoWay"></a>
                 <div class="tooltiptext">InfoWay</div>
             </div>
@@ -6311,7 +6556,7 @@
         <div class="card" data-cidade="Picuí - PB" data-empresa="InfoWay" data-regional="Regional 03"
             data-unidade="Regional Picui">
             <div class="tooltip"><a href="https://www.instagram.com/infowaytelecom/" target="_blank"><img
-                        src="https://instagram.fcpv1-1.fna.fbcdn.net/v/t51.2885…Eg55VM1DorNwvShPZ632FQ&oe=67610909&_nc_sid=8b3546"
+                        src="https://ugc.production.linktr.ee/D2kEfvBmQFSF5qagbrnf_6LpQmnNEkW7HJI30?io=true&size=avatar-v3_0"
                         alt="Logo InfoWay"></a>
                 <div class="tooltiptext">InfoWay</div>
             </div>
@@ -6338,7 +6583,7 @@
         <div class="card" data-cidade="Pedra Lavrada - PB" data-empresa="InfoWay" data-regional="Regional 03"
             data-unidade="Regional Picui">
             <div class="tooltip"><a href="https://www.instagram.com/infowaytelecom/" target="_blank"><img
-                        src="https://instagram.fcpv1-1.fna.fbcdn.net/v/t51.2885…Eg55VM1DorNwvShPZ632FQ&oe=67610909&_nc_sid=8b3546"
+                        src="https://ugc.production.linktr.ee/D2kEfvBmQFSF5qagbrnf_6LpQmnNEkW7HJI30?io=true&size=avatar-v3_0"
                         alt="Logo InfoWay"></a>
                 <div class="tooltiptext">InfoWay</div>
             </div>
@@ -6365,7 +6610,7 @@
         <div class="card" data-cidade="Cubati - PB" data-empresa="InfoWay" data-regional="Regional 02"
             data-unidade="Regional Santa Luzia">
             <div class="tooltip"><a href="https://www.instagram.com/infowaytelecom/" target="_blank"><img
-                        src="https://instagram.fcpv1-1.fna.fbcdn.net/v/t51.2885…Eg55VM1DorNwvShPZ632FQ&oe=67610909&_nc_sid=8b3546"
+                        src="https://ugc.production.linktr.ee/D2kEfvBmQFSF5qagbrnf_6LpQmnNEkW7HJI30?io=true&size=avatar-v3_0"
                         alt="Logo InfoWay"></a>
                 <div class="tooltiptext">InfoWay</div>
             </div>
@@ -6392,7 +6637,7 @@
         <div class="card" data-cidade="Frei Martinho - PB" data-empresa="InfoWay" data-regional="Regional 03"
             data-unidade="Regional Picui">
             <div class="tooltip"><a href="https://www.instagram.com/infowaytelecom/" target="_blank"><img
-                        src="https://instagram.fcpv1-1.fna.fbcdn.net/v/t51.2885…Eg55VM1DorNwvShPZ632FQ&oe=67610909&_nc_sid=8b3546"
+                        src="https://ugc.production.linktr.ee/D2kEfvBmQFSF5qagbrnf_6LpQmnNEkW7HJI30?io=true&size=avatar-v3_0"
                         alt="Logo InfoWay"></a>
                 <div class="tooltiptext">InfoWay</div>
             </div>
@@ -6419,7 +6664,7 @@
         <div class="card" data-cidade="Baraúna - PB" data-empresa="InfoWay" data-regional="Regional 03"
             data-unidade="Regional Picui">
             <div class="tooltip"><a href="https://www.instagram.com/infowaytelecom/" target="_blank"><img
-                        src="https://instagram.fcpv1-1.fna.fbcdn.net/v/t51.2885…Eg55VM1DorNwvShPZ632FQ&oe=67610909&_nc_sid=8b3546"
+                        src="https://ugc.production.linktr.ee/D2kEfvBmQFSF5qagbrnf_6LpQmnNEkW7HJI30?io=true&size=avatar-v3_0"
                         alt="Logo InfoWay"></a>
                 <div class="tooltiptext">InfoWay</div>
             </div>
@@ -6446,7 +6691,7 @@
         <div class="card" data-cidade="Sossêgo - PB" data-empresa="InfoWay" data-regional="Regional 03"
             data-unidade="Regional Picui">
             <div class="tooltip"><a href="https://www.instagram.com/infowaytelecom/" target="_blank"><img
-                        src="https://instagram.fcpv1-1.fna.fbcdn.net/v/t51.2885…Eg55VM1DorNwvShPZ632FQ&oe=67610909&_nc_sid=8b3546"
+                        src="https://ugc.production.linktr.ee/D2kEfvBmQFSF5qagbrnf_6LpQmnNEkW7HJI30?io=true&size=avatar-v3_0"
                         alt="Logo InfoWay"></a>
                 <div class="tooltiptext">InfoWay</div>
             </div>
@@ -6473,7 +6718,7 @@
         <div class="card" data-cidade="Parelhas - RN" data-empresa="InfoWay" data-regional="Regional 03"
             data-unidade="Regional Picui">
             <div class="tooltip"><a href="https://www.instagram.com/infowaytelecom/" target="_blank"><img
-                        src="https://instagram.fcpv1-1.fna.fbcdn.net/v/t51.2885…Eg55VM1DorNwvShPZ632FQ&oe=67610909&_nc_sid=8b3546"
+                        src="https://ugc.production.linktr.ee/D2kEfvBmQFSF5qagbrnf_6LpQmnNEkW7HJI30?io=true&size=avatar-v3_0"
                         alt="Logo InfoWay"></a>
                 <div class="tooltiptext">InfoWay</div>
             </div>
@@ -6500,7 +6745,7 @@
         <div class="card" data-cidade="Carnaúba dos Dantas - RN" data-empresa="InfoWay" data-regional="Regional 03"
             data-unidade="Regional Picui">
             <div class="tooltip"><a href="https://www.instagram.com/infowaytelecom/" target="_blank"><img
-                        src="https://instagram.fcpv1-1.fna.fbcdn.net/v/t51.2885…Eg55VM1DorNwvShPZ632FQ&oe=67610909&_nc_sid=8b3546"
+                        src="https://ugc.production.linktr.ee/D2kEfvBmQFSF5qagbrnf_6LpQmnNEkW7HJI30?io=true&size=avatar-v3_0"
                         alt="Logo InfoWay"></a>
                 <div class="tooltiptext">InfoWay</div>
             </div>
@@ -6526,9 +6771,9 @@
         </div>
         <div class="card" data-cidade="Arês - RN" data-empresa="Multi Soluções" data-regional="Regional 03"
             data-unidade="Regional Natal">
-            <div class="tooltip"><a href="https://www.instagram.com/multisolucoesinternet/reels/?__d=1"
+            <div class="tooltip"><a href="https://www.multirn.com.br/"
                     target="_blank"><img
-                        src="https://instagram.fcpv1-1.fna.fbcdn.net/v/t51.2885…OBzAyzXoERQOIq7ht2gcNw&oe=6760FE43&_nc_sid=8b3546"
+                        src="https://www.multirn.com.br/wa_images/logo%20-%20multi%20solucoes.jpg?v=1fj8ul9"
                         alt="Logo Multi Soluções"></a>
                 <div class="tooltiptext">Multi Soluções</div>
             </div>
@@ -6554,9 +6799,9 @@
         </div>
         <div class="card" data-cidade="Goianinha - RN" data-empresa="Multi Soluções" data-regional="Regional 03"
             data-unidade="Regional Natal">
-            <div class="tooltip"><a href="https://www.instagram.com/multisolucoesinternet/reels/?__d=1"
+            <div class="tooltip"><a href="https://www.multirn.com.br/"
                     target="_blank"><img
-                        src="https://instagram.fcpv1-1.fna.fbcdn.net/v/t51.2885…OBzAyzXoERQOIq7ht2gcNw&oe=6760FE43&_nc_sid=8b3546"
+                        src="https://www.multirn.com.br/wa_images/logo%20-%20multi%20solucoes.jpg?v=1fj8ul9"
                         alt="Logo Multi Soluções"></a>
                 <div class="tooltiptext">Multi Soluções</div>
             </div>
@@ -6877,9 +7122,10 @@
         <div class="card" data-cidade="Soledade - PB" data-empresa="Unny Telecom" data-regional="Regional 02"
             data-unidade="Regional Santa Luzia">
             <div class="tooltip"><a href="https://www.instagram.com/unny_telecom/" target="_blank"><img
-                        src="https://instagram.fcpv1-1.fna.fbcdn.net/v/t51.2885…S_Ew537OEB8MyHWQNJnEWQ&oe=6760FFC3&_nc_sid=8b3546"
+                        src="https://ugc.production.linktr.ee/X5hKQ7ukQS2A8fREd7qw_z9yIQ39a1943IFRV?io=true&size=avatar-v3_0"
                         alt="Logo Unny Telecom"></a>
                 <div class="tooltiptext">Unny Telecom</div>
+                
             </div>
             <div class="card-header">
                 <div class="header-titles"><span>Plano</span><span>Velocidade</span><span>Valor</span></div>
@@ -6904,7 +7150,7 @@
         <div class="card" data-cidade="Barra de Santa Rosa - PB" data-empresa="Unny Telecom" data-regional="Regional 03"
             data-unidade="Regional Picui">
             <div class="tooltip"><a href="https://www.instagram.com/unny_telecom/" target="_blank"><img
-                        src="https://instagram.fcpv1-1.fna.fbcdn.net/v/t51.2885…S_Ew537OEB8MyHWQNJnEWQ&oe=6760FFC3&_nc_sid=8b3546"
+                        src="https://ugc.production.linktr.ee/X5hKQ7ukQS2A8fREd7qw_z9yIQ39a1943IFRV?io=true&size=avatar-v3_0"
                         alt="Logo Unny Telecom"></a>
                 <div class="tooltiptext">Unny Telecom</div>
             </div>
@@ -7047,4 +7293,5 @@
         }
     </script>
 </body>
+
 </html>
